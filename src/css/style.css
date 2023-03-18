@@ -1,0 +1,514 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 8px;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.app-container {
+    height: 90vh;
+    padding: 2%;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5% 0;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+
+    border-width: 0;
+    border-style: none;
+    border-image: none;
+}
+
+.red {
+    background-color: rgb(220, 34, 34);
+    box-shadow: 0 0 10px 1px rgb(131, 131, 131);
+}
+
+.yellow {
+    background-color: rgb(223, 226, 28);
+    box-shadow: 0 0 10px 1px rgb(131, 131, 131);
+}
+
+.green {
+    background-color: rgb(34, 220, 34);
+    box-shadow: 0 0 10px 1px rgb(131, 131, 131);
+}
+
+/*  */
+/* Collapse */
+/*  */
+
+.collapse-container {
+    width: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 4px rgb(94, 117, 131);
+    padding: 2%;
+    font-size: 16px;
+}
+
+.btn-collapse {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: rgb(34, 77, 220);
+    outline: none;
+    border-radius: 5px;
+
+    border-width: 0;
+    border-style: none;
+    border-image: none;
+}
+
+.btn-collapse:focus {
+    background-color: rgb(25, 52, 139);
+    box-shadow: 0 0 5px 4px lightskyblue;
+    cursor: pointer;
+}
+
+.btn-collapse:hover {
+    background-color: rgb(28, 60, 164);
+}
+
+.btn-collapse:active {
+    box-shadow: 0 0 5px 4px lightskyblue;
+    transition: 0.5s;
+}
+
+.text {
+    margin: 20px;
+}
+
+.collapse {
+    height: 0px;
+    opacity: 0;
+    border: 1px solid #b6b6b6 ;
+    border-radius: 5px;
+}
+
+.collapse-active {
+    height: 100px;
+    opacity: 1;
+    animation-name: active;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+
+.collapse-close {
+    animation-name: deactive;
+    animation-duration: 0.15s;
+    animation-timing-function: linear;
+}
+
+@keyframes deactive {
+    from {
+        opacity: 1;
+        height: 100px;
+    }
+    
+    to {
+        opacity: 0;
+        height: 0px;
+    }
+}
+
+@keyframes active {
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+    
+    to {
+        opacity: 1;
+        height: 100px;
+    }
+}
+
+/*  */
+/* CallbackChat */
+/*  */
+
+.callback-chat-container {
+    height: 65vh;
+    position: relative;
+    
+    background-color: #fff;
+    box-shadow: 0 0 5px 4px rgb(149, 146, 101);
+}
+
+.open-callback-chat {
+    position: absolute;
+    top: 85%;
+    left: 90%;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px rgb(131, 131, 131);
+}
+
+.open-callback-chat:hover {
+    width: 80px;
+    height: 80px;
+
+    box-shadow: 0 0 10px 1px rgb(131, 131, 131);
+}
+
+.toPoint {
+    animation: toPoint;
+    animation-duration: 0.5s;
+
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.fromPoint {
+    animation: fromPoint;
+    animation-duration: 2s;
+}
+
+@keyframes toPoint {
+    from {
+        opacity: 1;
+        width: 80px;
+        height: 80px;
+    }
+
+    20% {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fromPoint {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container-chat {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    width: 30%;
+    height: 40vh;
+    padding: 2%;
+
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgb(131, 131, 131);
+    border-radius: 15px;
+
+    animation-name: apperance;
+    animation-duration: 0.5s;
+}
+
+.disapperance {
+    animation-name: disapperance;
+    animation-duration: 0.25s;
+}
+
+@keyframes apperance {
+    from {
+        opacity: 0;
+        width: 25%;
+        top: 35%;
+        left: 70%;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+        width: 30%;
+        top: 30%;
+        left: 60%;
+    }
+}
+
+@keyframes disapperance {
+    from {
+        opacity: 1;
+        width: 35%;
+        height: 40vh;
+        top: 30%;
+        left: 60%;
+    }
+
+    to {
+        opacity: 0;
+        width: 20%;
+        height: 20vh;
+        top: 45%;
+        left: 75%;
+    }
+}
+
+.title-chat {
+    font-size: 250%;
+    font-weight: 600;
+
+    margin-block-start: 0;
+    margin-block-end: 5%;
+}
+
+.close-chat {
+    position: absolute;
+    top: 3%;
+    left: 90%;
+    font-size: 200%;
+}
+
+.form-chat {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textarea-chat {
+    width: 97%;
+    height: 80%;
+    padding: 2%;
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 200%;
+
+    border: #8f8f8f solid 1px;
+    border-radius: 10px;
+
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+}
+
+.send-chat {
+    width: 100%;
+    height: 4vh;
+
+    border: #8f8f8f solid 1px;
+    border-radius: 10px;
+}
+
+/*  */
+/* Liker */
+/*  */
+
+.liker-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20% 40%;
+    width: 150px;
+    height: 250px;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px 4px rgb(161, 100, 100);
+}
+
+.btn-liker {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(255, 23, 50);
+    outline: none;
+    border-radius: 5px;
+
+    border-width: 0;
+    border-style: none;
+    border-image: none;
+
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+}
+
+.like-1 {
+    animation-name: like-1;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+.like-2 {
+    animation-name: like-2;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+.like-3 {
+    animation-name: like-3;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+.like-4 {
+    animation-name: like-4;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes like-1 {
+    from {
+        top: 200px;
+        left: 60px;
+        opacity: 1;
+    }
+
+    25% {
+        top: 150px;
+        left: 10px;
+        opacity: 0.75;
+    }
+
+    50% {
+        top: 100px;
+        left: 60px;
+        opacity: 0.5;
+    }
+
+    75% {
+        top: 50px;
+        left: 100px;
+        opacity: 0.25;
+    }
+
+    to {
+        top: 0px;
+        left: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes like-2 {
+    from {
+        top: 200px;
+        left: 60px;
+        opacity: 1;
+    }
+
+    25% {
+        top: 150px;
+        left: 60px;
+        opacity: 0.75;
+    }
+
+    50% {
+        top: 100px;
+        left: 110px;
+        opacity: 0.5;
+    }
+
+    75% {
+        top: 50px;
+        left: 10px;
+        opacity: 0.25;
+    }
+
+    to {
+        top: 0px;
+        left: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes like-3 {
+    from {
+        top: 200px;
+        left: 60px;
+        opacity: 1;
+    }
+
+    25% {
+        top: 150px;
+        left: 60px;
+        opacity: 0.75;
+    }
+
+    50% {
+        top: 100px;
+        left: 10px;
+        opacity: 0.5;
+    }
+
+    75% {
+        top: 50px;
+        left: 110px;
+        opacity: 0.25;
+    }
+
+    to {
+        top: 0px;
+        left: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes like-4 {
+    from {
+        top: 200px;
+        left: 60px;
+        opacity: 1;
+    }
+
+    25% {
+        top: 150px;
+        left: 110px;
+        opacity: 0.75;
+    }
+
+    50% {
+        top: 100px;
+        left: 60px;
+        opacity: 0.5;
+    }
+
+    75% {
+        top: 50px;
+        left: 10px;
+        opacity: 0.25;
+    }
+
+    to {
+        top: 0px;
+        left: 60px;
+        opacity: 0;
+    }
+}
