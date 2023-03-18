@@ -49,6 +49,15 @@ body {
     box-shadow: 0 0 10px 1px rgb(131, 131, 131);
 }
 
+@keyframes manifestation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /*  */
 /* Collapse */
 /*  */
@@ -59,6 +68,9 @@ body {
     box-shadow: 0 0 5px 4px rgb(94, 117, 131);
     padding: 2%;
     font-size: 16px;
+
+    animation-name: manifestation;
+    animation-duration: 1s;
 }
 
 .btn-collapse {
@@ -153,6 +165,9 @@ body {
     
     background-color: #fff;
     box-shadow: 0 0 5px 4px rgb(149, 146, 101);
+
+    animation-name: manifestation;
+    animation-duration: 1s;
 }
 
 .open-callback-chat {
@@ -338,6 +353,9 @@ body {
 
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 5px 4px rgb(161, 100, 100);
+
+    animation-name: manifestation;
+    animation-duration: 1s;
 }
 
 .btn-liker {
@@ -511,4 +529,170 @@ body {
         left: 60px;
         opacity: 0;
     }
+}
+
+@media (max-width: 400px) {
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        margin-bottom: 2%;
+    }
+
+    /*  */
+    /* Collapse */
+    /*  */
+
+    .collapse-active {
+        height: 130px;
+    }
+
+    @keyframes deactive {
+        from {
+            opacity: 1;
+            height: 130px;
+        }
+        
+        to {
+            opacity: 0;
+            height: 0px;
+        }
+    }
+    
+    @keyframes active {
+        from {
+            opacity: 0;
+            height: 0px;
+        }
+    
+        50% {
+            opacity: 0.2;
+        }
+        
+        to {
+            opacity: 1;
+            height: 130px;
+        }
+    }
+
+    /*  */
+    /* CallbackChat */
+    /*  */
+
+    .open-callback-chat {
+        position: absolute;
+        top: 85%;
+        left: 80%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .open-callback-chat:hover {
+        width: 60px;
+        height: 60px;
+    }
+
+    .container-chat {
+        top: 40%;
+        left: 30%;
+        width: 55%;
+        height: 30vh;
+        padding: 3%;
+    }
+
+    @keyframes apperance {
+        from {
+            opacity: 0;
+            width: 25%;
+            top: 65%;
+            left: 70%;
+        }
+    
+        40% {
+            opacity: 0.4;
+        }
+    
+        to {
+            opacity: 1;
+            width: 55%;
+            top: 40%;
+            left: 30%;
+        }
+    }
+
+    @keyframes disapperance {
+        from {
+            opacity: 1;
+            width: 55%;
+            height: 30vh;
+            top: 40%;
+            left: 30%;
+        }
+    
+        to {
+            opacity: 0;
+            width: 20%;
+            height: 20vh;
+            top: 65%;
+            left: 75%;
+        }
+    }
+
+    .title-chat {
+        font-size: 200%;
+        font-weight: 400;
+    }
+    
+    .close-chat {
+        position: absolute;
+        top: 3%;
+        left: 88%;
+        font-size: 160%;
+    }
+    
+    .form-chat {
+        height: 27vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .textarea-chat {
+        width: 97%;
+        height: 80%;
+        padding: 2%;
+    
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 200%;
+    
+        border: #8f8f8f solid 1px;
+        border-radius: 10px;
+    
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    
+        resize: none;
+    }
+    
+    .send-chat {
+        width: 100%;
+        height: 4vh;
+        margin-top: 5%;
+    
+        border: #8f8f8f solid 1px;
+        border-radius: 10px;
+    }
+
+    /*  */
+    /* Liker */
+    /*  */
+
+    .liker-container {
+        margin: 20% 28%;
+}
 }
